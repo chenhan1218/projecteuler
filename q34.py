@@ -8,7 +8,7 @@ import re
 
 count=0
 s = Set()
-for digits in xrange(1,9):
+for digits in xrange(1,8):
 	for x in itertools.combinations_with_replacement("0123456789", digits):
 		total = sum(map(factorial,map(int,x)))
 		if str(total).__len__() == x.__len__() and sorted(str(total))==map(str,x):
