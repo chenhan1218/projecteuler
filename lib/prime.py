@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import itertools
+from itertools import *
 def erat2( ):
     D = {  }
     yield 2
-    for q in itertools.islice(itertools.count(3), 0, None, 2):
+    for q in islice(count(3), 0, None, 2):
         p = D.pop(q, None)
         if p is None:
             D[q*q] = q
@@ -16,4 +16,4 @@ def erat2( ):
             D[x] = p
 
 def get_primes_erat(n):
-  return list(itertools.takewhile(lambda p: p<n, erat2()))
+  return list(takewhile(lambda p: p<n, erat2()))
